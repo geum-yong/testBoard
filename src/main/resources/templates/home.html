@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>board</title>
+
+    <style>
+        .main-box > a {
+            display: flex;
+            padding: 15px 0;
+        }
+
+        .main-box > a > p {
+            padding: 0 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>board</h1>
+<div class="main-box">
+    <a href="item.html" th:href="@{{itemNum}(itemNum=${item.num})}" th:each="item : ${list}">
+        <p th:text="${item.title}">title</p>
+        <p th:text="${item.author}">author</p>
+        <p th:text="${#temporals.format(item.createdDate, 'yyyy-MM-dd')}">date</p>
+    </a>
+</div>
+<a href="add.html" th:href="@{/add}" target="_self">등록</a>
+</body>
+</html>

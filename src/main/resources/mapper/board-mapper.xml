@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board.itemservice.mapper.BoardMapper">
+    <select id="getItemAll" resultType="BoardVO">
+        SELECT * FROM board
+    </select>
+
+    <select id="getItem" resultType="BoardVO">
+        SELECT * FROM board where num = #{num}
+    </select>
+
+    <insert id="addItem" parameterType="BoardVO" useGeneratedKeys="true" keyProperty="num">
+        insert into board(title, description, author) values (#{title}, #{description}, #{author})
+    </insert>
+
+    <update id="updateBoard" parameterType="BoardVO" useGeneratedKeys="true" keyProperty="num">
+        update board set title=#{title}, description=#{description}, author=#{author}
+        where num=#{num}
+    </update>
+</mapper>

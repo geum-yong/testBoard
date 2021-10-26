@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>board</title>
+</head>
+<body>
+    <form action="item.html" th:action method="post">
+        <label>
+            <p>title</p>
+            <input type="text" name="title">
+        </label>
+
+        <label>
+            <p>description</p>
+            <textarea name="description"></textarea>
+        </label>
+
+        <label>
+            <p>author</p>
+            <input type="text" name="author">
+        </label>
+
+        <input type="submit" value="등록">
+    </form>
+</body>
+</html>
